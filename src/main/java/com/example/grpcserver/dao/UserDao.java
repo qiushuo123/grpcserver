@@ -18,4 +18,6 @@ public interface UserDao {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    void updateUsername(Integer id, String username, Integer age);
 }

@@ -7,4 +7,6 @@ public interface UserService {
     public User getUserById(int userId);
 
     boolean addUser(User record);
+
+    void updateUsername(int userId, String username,int age);
 }

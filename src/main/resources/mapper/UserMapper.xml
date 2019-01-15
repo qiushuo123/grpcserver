@@ -79,4 +79,14 @@
       age = #{age,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <update id="updateUsername" parameterType="com.example.grpcserver.vo.UserReqVO">
+    update user_info_t
+        <set>
+          <if test="username!=null"> username = #{username},</if>
+          <if test="age!=-1"> age = #{age},</if>
+        </set>
+    where id = #{id}
+  </update>
+
 </mapper>

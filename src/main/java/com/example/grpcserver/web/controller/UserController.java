@@ -27,4 +27,18 @@ public class UserController {
         User user = this.userService.getUserById(userId);
         return user;
     }
+
+    @RequestMapping("/updateusername")
+    @ResponseBody
+    public User updateUsername(HttpServletRequest request, Model model){
+        int userId = Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("username");
+        int age=-1;
+        if(request.getParameter("age")!=null) {
+            age = Integer.parseInt(request.getParameter("age"));
+        }
+        userService.updateUsername(userId,username,age);
+        User user = this.userService.getUserById(userId);
+        return user;
+    }
 }
